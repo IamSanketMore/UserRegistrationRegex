@@ -4,29 +4,29 @@ import java.util.regex.Matcher;
 
 public class UserRegistration
 {
-	public void checkEmail(String emailId)
+	public void checkMobile(String mobileNumber)
 	{
 		//------------Regex------------------
-		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]+)?(@[a-z0-9]+)([.][a-z]{2,4})([.][a-z]{2})?$";
+		String regex = "^[0-9]{2}[ ][0-9]{10}$";
 		Pattern patternChecker = Pattern.compile(regex);
-		Matcher matchChecker = patternChecker.matcher(emailId);
+		Matcher matchChecker = patternChecker.matcher(mobileNumber);
 
 		//-------------Check valid or Not-----
 		if(matchChecker.matches())
-			System.out.println("Valid Email");
+			System.out.println("Valid Mobile Number");
 		else
-			System.out.println("InValid Email");
+			System.out.println("InValid Mobile Number");
 	}
 	public static void main(String args [])
 	{
 		Scanner scanReader = new Scanner(System.in);
 
-		UserRegistration newName = new UserRegistration();
-		System.out.println("Enter Email:-");
-		String email = scanReader.nextLine();
-		newName.checkEmail(email);
+		UserRegistration mobileObj = new UserRegistration();
+
+		System.out.println("Enter Mobile Number:-");
+		String mobileNumber = scanReader.nextLine();
+		mobileObj.checkMobile(mobileNumber);
 
 		scanReader.close();
 	}
 }
-
