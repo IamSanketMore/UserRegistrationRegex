@@ -4,10 +4,10 @@ import java.util.regex.Matcher;
 
 public class UserRegistration
 {
-	public void checkPasswordRule3(String passWord)
+	public void checkPasswordRule4(String passWord)
 	{
 		//------------Regex------------------
-		String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}";
+		String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@#$%^&(){}:;<>?/~_+-=|\\]]).{8,}$";
 		Pattern patternChecker = Pattern.compile(regex);
 		Matcher matchChecker = patternChecker.matcher(passWord);
 
@@ -21,11 +21,11 @@ public class UserRegistration
 	{
 		Scanner scanReader = new Scanner(System.in);
 
-		UserRegistration passwordObj = new  UserRegistration();
+		UserRegistration passwordObj = new UserRegistration();
 
-		System.out.println("Enter Password :-");
+		System.out.println("Enter Password:-");
 		String passWord = scanReader.nextLine();
-		passwordObj.checkPasswordRule3(passWord);
+		passwordObj.checkPasswordRule4(passWord);
 
 		scanReader.close();
 	}
