@@ -1,23 +1,23 @@
 import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-public class UserRegistration
 
+public class UserRegistration
 {
 
-	public void checkFirstName(String firstName)
+	public void checkLastName(String lastName)
 	{
 		//------------Regex------------------
 		String regex = "[A-Z]{1}[a-z]{2,}";
 
 		Pattern patternChecker = Pattern.compile(regex);
-		Matcher matchChecker = patternChecker.matcher(firstName);
+		Matcher matchChecker = patternChecker.matcher(lastName);
 
 		//-------------Check valid or Not-----
 		if(matchChecker.matches())
-			System.out.println("Valid First Name");
+			System.out.println("Valid Last Name");
 		else
-			System.out.println("InValid First Name");
+			System.out.println("InValid Last Name");
 	}
 	public static void main(String args [])
 	{
@@ -26,8 +26,8 @@ public class UserRegistration
 		UserRegistration newName = new UserRegistration();
 
 		System.out.println("Enter First Name:-");
-		String FirstName = scanReader.nextLine();
-		newName.checkFirstName(FirstName);
+		String LastName = scanReader.nextLine();
+		newName.checkLastName(LastName);
 
 		scanReader.close();
 	}
