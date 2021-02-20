@@ -4,28 +4,28 @@ import java.util.regex.Matcher;
 
 public class UserRegistration
 {
-	public void checkMobile(String mobileNumber)
+	public void checkPasswordRule(String passWord)
 	{
 		//------------Regex------------------
-		String regex = "^[0-9]{2}[ ][0-9]{10}$";
+		String regex = "^[a-zA-z]{8,}";
 		Pattern patternChecker = Pattern.compile(regex);
-		Matcher matchChecker = patternChecker.matcher(mobileNumber);
+		Matcher matchChecker = patternChecker.matcher(passWord);
 
 		//-------------Check valid or Not-----
 		if(matchChecker.matches())
-			System.out.println("Valid Mobile Number");
+			System.out.println("Valid Password");
 		else
-			System.out.println("InValid Mobile Number");
+			System.out.println("InValid Password");
 	}
 	public static void main(String args [])
 	{
 		Scanner scanReader = new Scanner(System.in);
 
-		UserRegistration mobileObj = new UserRegistration();
+		UserRegistration passwordObj = new UserRegistration();
 
-		System.out.println("Enter Mobile Number:-");
-		String mobileNumber = scanReader.nextLine();
-		mobileObj.checkMobile(mobileNumber);
+		System.out.println("Enter Password Minimun 8 characters:-");
+		String passWord = scanReader.nextLine();
+		passwordObj.checkPasswordRule(passWord);
 
 		scanReader.close();
 	}
