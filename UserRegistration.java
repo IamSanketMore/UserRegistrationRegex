@@ -4,10 +4,10 @@ import java.util.regex.Matcher;
 
 public class UserRegistration
 {
-	public void checkPasswordRule(String passWord)
+	public void checkPasswordRule2(String passWord)
 	{
 		//------------Regex------------------
-		String regex = "^[a-zA-z]{8,}";
+		String regex = "^(?=.*[A-Z])(?=.*[a-z]).{8,}";
 		Pattern patternChecker = Pattern.compile(regex);
 		Matcher matchChecker = patternChecker.matcher(passWord);
 
@@ -23,9 +23,9 @@ public class UserRegistration
 
 		UserRegistration passwordObj = new UserRegistration();
 
-		System.out.println("Enter Password Minimun 8 characters:-");
+		System.out.println("Enter Password :-");
 		String passWord = scanReader.nextLine();
-		passwordObj.checkPasswordRule(passWord);
+		passwordObj.checkPasswordRule2(passWord);
 
 		scanReader.close();
 	}
